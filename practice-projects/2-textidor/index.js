@@ -1,6 +1,6 @@
 'use strict';
 
-const express = require('express');
+const Express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
 const cors = require('cors');
@@ -11,13 +11,13 @@ const config = require('./config');
 // - setup -
 const FILES_DIR = __dirname + '/text-files';
 // create the express app
-_;
+const app = new Express();
 
 // - use middleware -
 // allow Cross Origin Resource Sharing
 app.use(cors());
 // parse the body
-_;
+app.use(Express.json());
 
 // https://github.com/expressjs/morgan#write-logs-to-a-file
 const accessLogStream = fs.createWriteStream(
